@@ -1,0 +1,273 @@
+@use "sass:color";
+@use "../libs/functions";
+@use "../libs/mixins";
+@use "../libs/vendor";
+
+
+
+@mixin color-typography($p: null) {
+	@if $p != null {
+		background-color: functions.palette($p, bg);
+		color: functions.palette($p, fg);
+	}
+
+	input, select, textarea {
+		color: functions.palette($p, fg-bold);
+	}
+
+	a {
+		&:hover {
+			color: functions.palette($p, fg-bold);
+		}
+	}
+
+	strong, b {
+		color: functions.palette($p, fg-bold);
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: functions.palette($p, fg-bold);
+	}
+
+	blockquote {
+		border-left-color: functions.palette($p, border);
+	}
+
+	code {
+		background: functions.palette($p, border-bg);
+		border-color: functions.palette($p, border);
+	}
+
+	hr {
+		border-bottom-color: functions.palette($p, border);
+	}
+}
+
+@mixin color-form($p: null) {
+	label {
+		color: functions.palette($p, fg-bold);
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		background-color: functions.palette($p, border-bg);
+		border-color: functions.palette($p, border);
+
+		&:focus {
+			border-color: functions.palette(accent);
+			box-shadow: 0 0 0 1px functions.palette(accent);
+		}
+	}
+
+	select {
+		background-image: mixins.svg-url("<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'><path d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='#{functions.palette($p, border)}' /></svg>");
+
+		option {
+			color: functions.palette($p, fg-bold);
+			background: functions.palette($p, bg);
+		}
+	}
+
+	input[type="checkbox"],
+	input[type="radio"], {
+		& + label {
+			color: functions.palette($p, fg);
+
+			&:before {
+				background: functions.palette($p, border-bg);
+				border-color: functions.palette($p, border);
+			}
+		}
+
+		&:checked + label {
+			&:before {
+				background-color: functions.palette($p, fg-bold);
+				border-color: functions.palette($p, fg-bold);
+				color: functions.palette($p, bg);
+			}
+		}
+
+		&:focus + label {
+			&:before {
+				border-color: functions.palette(accent);
+				box-shadow: 0 0 0 1px functions.palette(accent);
+			}
+		}
+	}
+
+	::-webkit-input-placeholder {
+		color: functions.palette($p, fg-light) !important;
+	}
+
+	:-moz-placeholder {
+		color: functions.palette($p, fg-light) !important;
+	}
+
+	::-moz-placeholder {
+		color: functions.palette($p, fg-light) !important;
+	}
+
+	:-ms-input-placeholder {
+		color: functions.palette($p, fg-light) !important;
+	}
+
+	.formerize-placeholder {
+		color: functions.palette($p, fg-light) !important;
+	}
+}
+
+@mixin color-box($p: null) {
+	.box {
+		border-color: functions.palette($p, border);
+	}
+}
+
+@mixin color-button($p: null) {
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		background-color: transparent;
+		box-shadow: inset 0 0 0 1px functions.palette($p, border);
+		color: functions.palette($p, fg-bold) !important;
+
+		&:hover {
+			background-color: functions.palette($p, border-bg);
+		}
+
+		&:active {
+			background-color: functions.palette($p, border2-bg);
+		}
+
+		&.icon {
+			&:before {
+				color: functions.palette($p, fg-light);
+			}
+		}
+
+		&.primary {
+			background-color: functions.palette(accent);
+			color: functions.palette(invert, fg) !important;
+			box-shadow: none;
+
+			&:hover {
+				background-color: color.adjust(functions.palette(accent), $lightness: 3%);
+			}
+
+			&:active {
+				background-color: color.adjust(functions.palette(accent), $lightness: -3%);
+			}
+
+			&.icon {
+				&:before {
+					color: functions.palette(invert, fg) !important;
+				}
+			}
+		}
+	}
+}
+
+@mixin color-icon($p: null) {
+	.icon {
+		&.major {
+			border-color: functions.palette($p, border);
+
+			&:before {
+				border-color: functions.palette($p, border);
+			}
+		}
+
+		&.alt {
+			border-color: functions.palette($p, border);
+			color: functions.palette($p, fg-bold);
+
+			&:hover {
+				background-color: functions.palette($p, border-bg);
+			}
+
+			&:active {
+				background-color: functions.palette($p, border2-bg);
+			}
+		}
+	}
+}
+
+@mixin color-list($p: null) {
+	ul {
+		&.alt {
+			li {
+				border-top-color: functions.palette($p, border);
+			}
+		}
+	}
+
+	dl {
+		dt {
+			color: functions.palette($p, fg-bold);
+		}
+	}
+}
+
+@mixin color-section($p: null) {
+	header {
+		&.major {
+			h2 {
+				&:after {
+					background-color: functions.palette($p, border);
+
+					@if $p == 'invert' {
+						@include vendor.vendor('background-image', 'linear-gradient(90deg, #{functions.palette(accent1)}, #{functions.palette(accent3)}, #{functions.palette(accent5)})');
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin color-spotlight($p: null) {
+	.spotlight {
+		.image {
+			border-color: functions.palette($p, border);
+		}
+	}
+}
+
+@mixin color-table($p: null) {
+	table {
+		tbody {
+			tr {
+				border-color: functions.palette($p, border);
+
+				&:nth-child(2n + 1) {
+					background-color: functions.palette($p, border-bg);
+				}
+			}
+		}
+
+		th {
+			color: functions.palette($p, fg-bold);
+		}
+
+		thead {
+			border-bottom-color: functions.palette($p, border);
+		}
+
+		tfoot {
+			border-top-color: functions.palette($p, border);
+		}
+
+		&.alt {
+			tbody {
+				tr {
+					td {
+						border-color: functions.palette($p, border);
+					}
+				}
+			}
+		}
+	}
+}

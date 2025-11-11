@@ -1,0 +1,90 @@
+@use "../libs/breakpoints";
+@use "../libs/colors";
+@use "../libs/functions";
+@use "../libs/vendor";
+
+///
+/// Stellar by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Spotlight */
+
+	.spotlight {
+		@include vendor.vendor('display', 'flex');
+		@include vendor.vendor('align-items', 'center');
+		margin: 0 0 functions.size(element-margin) 0;
+
+		.content {
+			@include vendor.vendor('flex', '1');
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+
+			header {
+				&.major {
+					margin: 0 0 functions.size(element-margin) 0;
+				}
+			}
+		}
+
+		.image {
+			display: inline-block;
+			margin-left: 4em;
+			padding: 0.65em;
+			border-radius: 100%;
+			border: solid 1px;
+
+			img {
+				display: block;
+				border-radius: 100%;
+				width: 16em;
+			}
+		}
+
+		@include breakpoints.breakpoint('<=medium') {
+			@include vendor.vendor('flex-direction', 'column-reverse');
+			text-align: center;
+
+			.content {
+				@include vendor.vendor('flex', '0 1 auto');
+				width: 100%;
+
+				header {
+					&.major {
+						h2 {
+							&:after {
+								margin-left: auto;
+								margin-right: auto;
+							}
+						}
+					}
+				}
+
+				.actions {
+					@include vendor.vendor('justify-content', 'center');
+					width: calc(100% + #{functions.size(element-margin) * 0.5});
+				}
+			}
+
+			.image {
+				@include vendor.vendor('flex', '0 1 auto');
+				margin-left: 0;
+				margin-bottom: functions.size(element-margin);
+			}
+		}
+
+		@include breakpoints.breakpoint('<=small') {
+			.image {
+				padding: 0.35em;
+
+				img {
+					width: 12em;
+				}
+			}
+		}
+	}
+
+	@include colors.color-spotlight;

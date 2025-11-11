@@ -68,7 +68,7 @@
                   <!-- section footer/cta -->
                   {{ if $section.footer.enable }}
                     <footer class="major">
-                      <ul class="actions">
+                      <ul class="actions special">
                         {{range $button := $section.footer.action }}
                           <li>
                             <a href="{{ $button.buttonUrl }}" class="button {{ $button.customClass }}">{{ $button.buttontext }}</a>

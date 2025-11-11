@@ -1,0 +1,65 @@
+@use "../libs/breakpoints";
+@use "../libs/functions";
+@use "../libs/mixins";
+@use "../libs/vendor";
+
+///
+/// Stellar by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Footer */
+
+	#footer {
+		@include vendor.vendor('display', 'flex');
+		@include vendor.vendor('flex-wrap', 'wrap');
+		@include mixins.padding(5em, 5em);
+		width: calc(100% + #{functions.size(element-margin)});
+		margin: 0 0 (functions.size(element-margin) * 1.5) (functions.size(element-margin) * -1);
+
+		> * {
+			width: calc(50% - #{functions.size(element-margin)});
+			margin-left: functions.size(element-margin);
+		}
+
+		.copyright {
+			width: 100%;
+			margin: (functions.size(element-margin) * 1.25) 0 functions.size(element-margin) 0;
+			font-size: 0.8em;
+			text-align: center;
+		}
+
+		@include breakpoints.breakpoint('<=large') {
+			@include mixins.padding(4em, 4em);
+		}
+
+		@include breakpoints.breakpoint('<=medium') {
+			@include mixins.padding(4em, 3em);
+			display: block;
+			margin: 0 0 (functions.size(element-margin) * 1.5) 0;
+			width: 100%;
+
+			> * {
+				width: 100%;
+				margin-left: 0;
+				margin-bottom: (functions.size(element-margin) * 1.5);
+			}
+
+			.copyright {
+				text-align: left;
+			}
+		}
+
+		@include breakpoints.breakpoint('<=small') {
+			@include mixins.padding(3em, 2em);
+		}
+
+		@include breakpoints.breakpoint('<=xsmall') {
+			@include mixins.padding(3em, 1.5em);
+		}
+
+		@include breakpoints.breakpoint('<=xsmall') {
+			@include mixins.padding(2.5em, 1em);
+		}
+	}

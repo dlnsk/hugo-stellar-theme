@@ -1,0 +1,14 @@
+@use "colors";
+
+
+@mixin color($p) {
+	@include colors.color-typography($p);
+	@include colors.color-box($p);
+	@include colors.color-button($p);
+	@include colors.color-form($p);
+	@include colors.color-icon($p);
+	@include colors.color-list($p);
+	@include colors.color-section($p);
+	@include colors.color-table($p);
+	@include colors.color-spotlight($p);
+}

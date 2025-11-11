@@ -4,12 +4,14 @@ languageCode = "en-us"
 title = "Hugo Stellar Theme"
 theme = "hugo-stellar-theme"
 
-googleAnalytics = "" #put your google-analytics ID here
+[services]
+  [services.googleAnalytics]
+    id = "" #put your google-analytics ID here
 
 [params]
   [params.header]
     title = "Stellar"
-    description = 'Just another free, fully responsive site template built by [@ajlkn](https://twitter.com/ajlkn) for <a href="https://html5up.net">HTML5 UP</a>. Ported to [hugo](https://gohugo.io) by [@AntonPolishko](https://github.com/antonpolishko)'
+    description = 'Just another free, fully responsive site template built by [@ajlkn](https://twitter.com/ajlkn) for >
     image = "images/logo.svg"
 
   [[params.navigation]]
@@ -48,7 +50,7 @@ googleAnalytics = "" #put your google-analytics ID here
       [[params.section.feature]]
         title = "Ipsum consequat"
         description = "Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat."
-        icon = "fa-code"
+        icon = "fa-code solid"
 
       [[params.section.feature]]
         title = "Amed sed feugiat"
@@ -58,7 +60,7 @@ googleAnalytics = "" #put your google-analytics ID here
       [[params.section.feature]]
         title = "Dolor nullam"
         description = "Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat."
-        icon = "fa-diamond"
+        icon = "fa-gem"
     [params.section.footer]
       enable = true
       [[params.section.footer.action]]
@@ -68,28 +70,28 @@ googleAnalytics = "" #put your google-analytics ID here
   [[params.section]]
     id = "second"
     title = "Ipsum consequat"
-    description = "Donec imperdiet consequat consequat. Suspendisse feugiat congue posuere. Nulla massa urna, fermentum eget quam aliquet."
+    description = "Donec imperdiet consequat consequat. Suspendisse feugiat congue  \nposuere. Nulla massa urna, fermentum eget quam aliquet."
 
     [params.section.statistics]
       enable = true
       [[params.section.statistic]]
-        icon = "fa-code-fork"
+        icon = "fa-code-branch solid"
         value = "5,120"
         text = "Etiam"
       [[params.section.statistic]]
-        icon = "fa-folder-open-o"
+        icon = "fa-folder-open"
         value = "8,192"
         text = "Magna"
       [[params.section.statistic]]
-        icon = "fa-signal"
+        icon = "fa-signal solid"
         value = "2,048"
         text = "Tempus"
       [[params.section.statistic]]
-        icon = "fa-laptop"
+        icon = "fa-laptop solid"
         value = "4,096"
         text = "Aliquam"
       [[params.section.statistic]]
-        icon = "fa-diamond"
+        icon = "fa-gem"
         value = "1,024"
         text = "Nullam"
 
@@ -107,13 +109,13 @@ googleAnalytics = "" #put your google-analytics ID here
   [[params.section]]
     id = "cta"
     title = "Congue imperdiet"
-    description = "Donec imperdiet consequat consequat. Suspendisse feugiat congue posuere. Nulla massa urna, fermentum eget quam aliquet."
+    description = "Donec imperdiet consequat consequat. Suspendisse feugiat congue  \nposuere. Nulla massa urna, fermentum eget quam aliquet."
     [params.section.footer]
       enable = true
       [[params.section.footer.action]]
         buttontext = "Get Started"
         buttonUrl = "generic.html"
-        customClass = "special"
+        customClass = "primary"
       [[params.section.footer.action]]
         buttontext = "Learn More"
         buttonUrl = "generic.html"
@@ -138,22 +140,22 @@ googleAnalytics = "" #put your google-analytics ID here
 
       [[params.footer.social]]
         title = "Twitter"
-        icon = "fa-twitter"
+        icon = "fa-twitter brands"
         link = "#"
 
       [[params.footer.social]]
         title = "Facebook"
-        icon = "fa-facebook"
+        icon = "fa-facebook brands"
         link = "#"
 
       [[params.footer.social]]
         title = "Instagramm"
-        icon = "fa-instagram"
+        icon = "fa-instagram brands"
         link = "#"
 
       [[params.footer.social]]
         title = "Dribbble"
-        icon = "fa-dribbble"
+        icon = "fa-dribbble brands"
         link = "#"
 
       [[params.footer.social]]
