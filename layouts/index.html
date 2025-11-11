@@ -40,7 +40,11 @@
                     <ul class="features">
                       {{ range $count, $feature := $section.feature }}
                       <li>
-                        <span class="icon major style{{ add $count 1 }} {{ $feature.icon }}"></span>
+                        {{ if $feature.icon }}
+                          <span class="icon major style{{ add $count 1 }} {{ $feature.icon }}"></span>
+                        {{ else if $feature.image}}
+                          <img class="icon major style{{ add $count 1 }}" src="{{ $feature.image }}" alt="" style="height: 220px;">
+                        {{ end }}
                         <h3>{{ $feature.title }} </h3>
                         <p>{{ $feature.description | markdownify }}</p>
                       </li>
@@ -58,6 +62,10 @@
                         </li>
                       {{ end }}
                     </ul>
+                  {{ end }}
+
+                  {{ if $section.include }}
+                    {{ partial $section.include $ }}
                   {{ end }}
 
                   <!-- section content -->
