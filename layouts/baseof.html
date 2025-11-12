@@ -14,7 +14,11 @@
       <div id="wrapper">
 
         <!-- Header -->
-          {{ partial "header.html" . }}
+          {{ if .Page.IsHome }}
+            {{ partial "header-home.html" . }}
+          {{ else }}
+            {{ partial "header-page.html" . }}
+          {{ end }}
 
         <!-- Nav -->
           {{ partial "navigation.html" . }}
