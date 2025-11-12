@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+{{ "<!--" | safeHTML}}
+  Stellar by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+{{ "-->" | safeHTML }}
+<html>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+          {{ partial "header.html" . }}
+
+        <!-- Nav -->
+          {{ partial "navigation.html" . }}
+
+        <!-- Main -->
+          <div id="main">
+
+            {{ template "main" . }}
+
+          </div>
+
+        <!-- Footer -->
+          {{ partial "footer.html" . }}
+
+      </div>
+
+    <!-- Scripts -->
+      {{ partial "scripts.html" . }}
+      {{- partial "footer_custom.html" . }}
+  </body>
+</html>
