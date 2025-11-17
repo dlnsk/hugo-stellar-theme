@@ -17,7 +17,7 @@ This theme provides the following features:
 |Version|Branch  |Description
 |-------|--------|-----------
 |1.0    |master  |Pure Stellar theme with no deprecations
-|2.0    |v2      |Small fixes to allow dropdown menu
+|2.0    |v2      |* Small fixes to allow dropdown menu<br />* Turn off borders for lists inside an `.alt` list
 
 
 ## Installation
