@@ -1,7 +1,7 @@
 <footer id="footer">
   <section>
     <h2>{{ .Site.Params.footer.title }}</h2>
-    <p>{{ .Site.Params.footer.description | markdownify }}</p>
+    {{ .Site.Params.footer.description | markdownify }}
     <ul class="actions">
       {{range $button := .Site.Params.footer.action }}
         <li>
@@ -23,7 +23,7 @@
         <dd>{{ . | markdownify }}</dd>
       {{ end }}
       <dt>{{ T "Email"}}</dt>
-      <dd><a href="mailto:{{.Site.Params.footer.email}}">{{.Site.Params.footer.email | markdownify }}</a></dd>
+      <dd>{{.Site.Params.footer.email | markdownify }}</dd>
     </dl>
   
     {{ if .Site.Params.footer.social_list.enable }}
