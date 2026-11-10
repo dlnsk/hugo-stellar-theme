@@ -23,7 +23,7 @@
         <dd>{{ . | markdownify }}</dd>
       {{ end }}
       <dt>{{ T "Email"}}</dt>
-      <dd>{{.Site.Params.footer.email | markdownify }}</dd>
+      <dd>{{.Site.Params.footer.email | partial "safe-email" }}</dd>
     </dl>
   
     {{ if .Site.Params.footer.social_list.enable }}

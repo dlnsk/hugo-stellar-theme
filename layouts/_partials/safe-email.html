@@ -1,0 +1,9 @@
+<script type="text/javascript">
+    (function() {
+        var e = atob("{{ . | base64Encode }}");
+        var a = document.createElement("a");
+        a.href = "mailto:" + e;
+        a.textContent = e;
+        document.currentScript.parentElement.appendChild(a);
+    })();
+</script>
